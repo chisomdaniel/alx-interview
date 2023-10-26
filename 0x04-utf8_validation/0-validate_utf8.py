@@ -13,7 +13,9 @@ def validUTF8(data):
         if (num >= 256):
             # print("Error, too large")
             return False
+
         bin_num = bin(num).replace("0b", "")
+
         if len(bin_num) < 8:
             x = 8-len(bin_num)
             bin_num = ("0"*x) + bin_num
