@@ -26,11 +26,12 @@ def canUnlockAll(boxes):
     keys = [0]
 
     for i in keys:
-        if (i < box_length) and (i >= 0):
+        if (i < box_length):
             keys = add_keys(keys, boxes[i])
 
         if len(keys) == box_length:
-            # print(keys)
+            print(keys)
             return True
 
     return False
+
