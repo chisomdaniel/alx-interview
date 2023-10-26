@@ -11,7 +11,7 @@ def validUTF8(data):
     new_dict = {}
     for i, num in enumerate(data):
         if (num >= 256):
-            #print("Error, too large")
+            # print("Error, too large")
             return False
         bin_num = bin(num).replace("0b", "")
         if len(bin_num) < 8:
@@ -23,36 +23,35 @@ def validUTF8(data):
             word_count += 1
         elif check_f(bin_num):
             if word_count == 0:
-                #print(new_dict, "\nerror found 1")
+                # print(new_dict, "\nerror found 1")
                 return False
             new_dict[word_count-1].append(bin_num)
         else:
-            #print(new_dict, "\nerror found 2")
+            # print(new_dict, "\nerror found 2")
             return False
-    
-    # TODO - write code to check each character, covert them to numbers, and confirm the limit
+
     for i in new_dict.values():
         bin_num = "".join(i)
         dec = int(bin_num, 2)
 
         if bin_num.startswith('0'):
             if dec >= 0 and dec <= 127:
-                #print(1)
+                # print(1)
                 return True
         elif bin_num.startswith('110'):
             if dec >= 49792 and dec <= 57279:
-                #print(2)
+                # print(2)
                 return True
         elif bin_num.startswith('1110'):
             if dec >= 14721152 and dec <= 15712191:
-                #print(3)
+                # print(3)
                 return True
         elif bin_num.startswith('11110'):
             if dec >= 4036001920 and dec <= 4103061439:
-                #print(4)
+                # print(4)
                 return True
 
-    #print_dict(new_dict)
+    # print_dict(new_dict)
 
     return False
 
@@ -78,21 +77,20 @@ def check_f(num):
 
     if num.startswith('10'):
         return True
-    
+
     return False
+
 
 def print_dict(dicti):
     for i, j in dicti.items():
         print(i, ':', j)
 
 
+# data = [65]
+# print(validUTF8(data))
 
-#data = [65]
-#print(validUTF8(data))
+# data = [80, 121, 116, 104, 111, 110, 32, 105, 115, 32, 99, 111, 111, 108, 33]
+# print(validUTF8(data))
 
-#data = [80, 121, 116, 104, 111, 110, 32, 105, 115, 32, 99, 111, 111, 108, 33]
-#print(validUTF8(data))
-
-#data = [229, 65, 127, 2563]
-#print(validUTF8(data))
-#print(validUTF8([65, 80, 256, 32, 182, 181, 183, 32, 121, 116, 237, 163, 184, 182, 163, 80, 121, 116, 104, 111, 110, 32, 105, 115, 32, 99, 111, 111, 108, 33, 229, 65, 127]))
+# data = [229, 65, 127, 2563]
+# print(validUTF8(data))
