@@ -7,7 +7,7 @@ def island_perimeter(grid):
     start = False
     count = 0
 
-    if grid == [] or grid == [[]]:
+    if grid == [] or grid == [[]] or grid is None:
         return
 
     length = len(grid[0])
