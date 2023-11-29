@@ -14,21 +14,21 @@ def island_perimeter(grid):
     # vertical scan
     for i in range(length):
         for each in grid:
-            if (each[i] == 1) and (start == False):
+            if (each[i] == 1) and (start is False):
                 count += 1
                 start = True
-            if (each[i] == 0) and (start == True):
+            if (each[i] == 0) and (start is True):
                 count += 1
                 start = False
-    
+
     # horizontal scan
     start = False
     for each in grid:
         for j in each:
-            if (j == 1) and (start == False):
+            if (j == 1) and (start is False):
                 count += 1
                 start = True
-            if (j == 0) and (start == True):
+            if (j == 0) and (start is True):
                 count += 1
                 start = False
 
