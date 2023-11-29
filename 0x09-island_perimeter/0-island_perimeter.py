@@ -8,7 +8,7 @@ def island_perimeter(grid):
     count = 0
 
     if grid == [] or grid == [[]]:
-        return 0
+        return
 
     length = len(grid[0])
     # vertical scan
