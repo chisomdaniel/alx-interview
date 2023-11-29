@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 '''Calculate the perimeter of an island'''
-from typing import List
 
 
-def island_perimeter(grid: List[List[int]]):
+def island_perimeter(grid):
     '''calculate the perimeter of the island'''
     start = False
     count = 0
