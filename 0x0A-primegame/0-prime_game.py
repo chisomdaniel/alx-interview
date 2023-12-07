@@ -23,6 +23,7 @@ def isPrime(num):
 
 
 def isWinner(x, nums):
+    '''check winner'''
 
     if not nums:
         return None
