@@ -18,7 +18,7 @@ def isPrime(num):
         return False
     if num % 7 == 0:
         return False
-    
+
     return True
 
 
@@ -28,7 +28,7 @@ def isWinner(x, nums):
         return None
     if nums == [] or x == 0:
         return None
-    
+
     return 'Ben'
 
     final_winner = []
@@ -51,7 +51,7 @@ def isWinner(x, nums):
             final_winner.append('Ben')
         else:
             final_winner.append('Maria')
-    
+
     # return final_winner[-1]
     if final_winner == []:
         return 'Ben'
